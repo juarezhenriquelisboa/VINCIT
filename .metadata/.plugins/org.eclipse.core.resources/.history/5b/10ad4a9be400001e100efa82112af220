@@ -1,0 +1,21 @@
+package br.com.tarefas.repository;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import br.com.tarefas.model.Tarefa;
+
+@SpringBootTest
+public class TarefaRepositoryTest {
+
+	private TarefaRepository repositorio;
+	
+	@Test
+	void testFindByNomeCategoria() {
+		List<Tarefa> tarefas = repositorio.findByNomeCategoria("Estudos");
+		Assertions.assertEquals(2, tarefas.size());
+	}
+}

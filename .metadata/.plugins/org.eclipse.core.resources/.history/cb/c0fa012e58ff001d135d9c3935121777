@@ -1,0 +1,14 @@
+package br.com.tarefas.model;
+
+import java.time.LocalDate;
+
+public class Tarefa {
+
+	private String descricao;
+	
+	private TarefaStatus status;
+	
+	private LocalDate dataEntrega;
+	
+	private boolean visivel;
+}
