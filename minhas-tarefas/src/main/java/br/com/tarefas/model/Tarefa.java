@@ -13,6 +13,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tarefas")
@@ -23,12 +26,15 @@ public class Tarefa {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
+	@NotBlank(message = "{tarefa.descricao.not-blank")
+	@Size(min = 5, max = 150, message = "{tarefa.descricao.size}")
 	@Column(name = "ds_tarefa", nullable = false, length = 150)
 	private String descricao;
 	
 	@Enumerated(EnumType.STRING)
-	private TarefaStatus status;
+	private TarefaStatus status = TarefaStatus.ABERTO;
 	
+	@FutureOrPresent(message = "{tarefa.descricao.future-or-present}")
 	private LocalDate dataEntrega;
 	
 	private boolean visivel;
