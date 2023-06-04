@@ -2,17 +2,6 @@ package br.com.tarefas.controller.response;
 
 import java.time.LocalDate;
 
-import br.com.tarefas.model.TarefaStatus;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-
 public class TarefaResponse {
 
 	private Integer id;
